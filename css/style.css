@@ -471,9 +471,9 @@
 /* Header */
 
 	#header {
-		background: #333333 url("../images/header.jpg") no-repeat;
+		background: #333333 url("../images/everest.jpg") no-repeat;
 		background-size: cover;
-		color: #424949;
+		color: #FFF;
 		padding: 6em 0;
 		text-align: center;
 		background-position: 0% 65%;
