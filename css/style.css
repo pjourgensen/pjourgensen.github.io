@@ -111,6 +111,10 @@
 	footer.major {
 		padding-top: 3em;
 	}
+	
+	figcaption {
+		font-size: 0.5em;
+	}
 
 /* Form */
 
