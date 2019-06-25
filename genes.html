@@ -59,9 +59,10 @@
 							<h2>Gene Selection</h2>
 							<span class="byline">Identifying Key Genes for Cancer Classification via Ensebled Neural Networks</span>
 						</header>
-						<ul class="icons">
+						<!-- <ul class="icons">
 							<li><a href="https://github.com/pjourgensen/Gene-Selection" class="icon fa-github"></a></li>
-						</ul>
+						</ul> -->
+						<a href="https://github.com/pjourgensen/Gene-Selection">Link to GitHub Repo!</a>
 						<h3><i>Introduction</i></h3>
 						<p>Classification of cancer tissue cells based on microarray expression levels has been of of great interest over the last 30 years. The struggle often resides in the fact that datasets tend to contain few samples in comparison to their number of features. Some approaches tend towards optimizing a model for a given selection of features, while others tend towards optimizing the selection of features before giving them to a model. There are many varying approaches to selecting genes, but a common goal remains to estimate the effect of gene interactions on final classification. With a high feature space, however, this results in a combinatorial explosion of interactions and too small a sample space to accurately estimate the significance of a given interaction. In this report, I discuss a new approach to selecting significant genes based on their interactions with others. I begin by applying an ensembling method to a neural network base model, whereby random subsets of training data are passed through the base model to ultimately make predictions on a held out set. The accuracies of the models are then transformed into weights, which can be used to “score” each individual gene. The hypothesis is that combinations of high scoring genes will serve as strong predictors for cancer class. Finally, I take various selections of the highest scoring genes and train a KNN model for prediction. Using the data from “Molecular Classification of Cancer: Class Discovery and Class Prediction by Gene Expression Monitoring” (Golub et al. 1999), this approach is able to achieve 97.2% classification accuracy on the collection of patients.</p>
 						<h3><i>Methodology</i></h3>
