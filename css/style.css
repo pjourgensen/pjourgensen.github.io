@@ -127,7 +127,6 @@
 	i {
 	        font-size: 30px;
 	        height: 30px;
-	        vertical-align: middle;
 	}
 	
 	i:hover {
@@ -677,5 +676,9 @@
 
 		#footer a {
 			color: inherit;
+		}
+
+		#footer icons{
+			veritcal-align: middle;
 		}
 		
