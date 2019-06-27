@@ -676,9 +676,11 @@
 
 		#footer a {
 			color: inherit;
+
 		}
 
 		#footer icons{
-			veritcal-align: center;
+			margin-left: auto;
+			margin-right: auto;
 		}
 		
