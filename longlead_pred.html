@@ -1,0 +1,139 @@
+<!DOCTYPE HTML>
+<!--
+	Horizons by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Heatwave Prediction</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.dropotron.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+	</head>
+	<body class="no-sidebar">
+
+		<!-- Header -->
+			<div id="header">
+				<div class="container">
+
+					<!-- Logo -->
+						<h1><a href="#" id="logo"></a></h1>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="index.html">Home</a></li>
+                <li>
+									<a href="">Active Projects</a>
+									<ul>
+										<li><a href="longlead_pred.html">Heatwave Prediction</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="">Past Projects</a>
+									<ul>
+										<li><a href="nhanes.html">NHANES Analysis</a></li>
+										<li><a href="distributedCDN.html">Distributed CDN</a></li>
+										<li><a href="genes.html">Gene Selection</a></li>
+									</ul>
+								</li>
+								<li><a href="no-sidebar.html">Resume</a></li>
+							</ul>
+						</nav>
+
+				</div>
+			</div>
+
+		<!-- Main -->
+			<div id="main" class="wrapper style1">
+				<div class="container">
+					<section>
+						<header class="major">
+							<h2>Heatwave Prediction</h2>
+							<span class="byline">Longlead heatwave prediction of Eastern US via Convolutional LSTM Networks</span>
+						</header>
+            <a href="https://github.com/pjourgensen/Longlead-Heat">GitHub Repo</a>
+            <p></p>
+						<h3><i>Overview</i></h3>
+						<p> 
+            Sea Surface Temperature (SST) is a valuable factor in climate modeling and weather forecasting. In 2016, <a href=https://karenamckinnon.github.io/index.html">Prof. Karen McKinnon</a> published a paper on an approach she used to predict hot days of the Eastern US with lead times up to 50 days in advance. Upon reading the paper, I reached out to Prof. McKinnon to discuss the possibility of extending the research with the application of neural networks in an attempt to not only improve accuracy, but allow for generalized prediction across the world as well. 
+            </p>
+            <figure>
+							<img src="/images/sst_example.jpg" alt="SST Example" width="600" height="300" class="center">
+							<figcaption><b>Fig.1 - Illustration of SST data. Daily measurements go back to late 1981.</b></figcaption>
+						</figure>
+            <p>
+            In this project, I attempt to apply neural networks to SST data for longlead predictions of heatwave events in the Eastern US. SST data is spatial in structure (Latitude x Longitude), which lends itself to convolutional analysis, while the dependencies of sequential days are temporal in structure, lending itself to time series analysis. The most common tools for these structures are Convolutional Neural Networks (CNNs) for spatial reasoning and Long Short Term Memory (LSTM) Models for temporal reasoning. In 2015, Xingjian Shi et al. developed a model combining the 2 methods, that was then shown to have improved performance in spatiotemporal modeling.
+            </p>
+            <figure>
+							<img src="/images/cnn.jpg" alt="CNN Model" width="600" height="300" float="left">
+              <img src="/images/lstm.jpg" alt="LSTM Model" width="600" height="300" float="right">
+							<figcaption><b>Fig.2 - Left: Illustration of CNN. Right: Illustration of LSTM.</b></figcaption>
+						</figure>
+            <p>
+            In their model, they removed the fully connected networks in the input-to-state and state-to-state transitions and replaced with convolutional networks. Not only does this offer a reduction in free parameters come training time, but also offers the capability of learning spatiotemporal patterns within a single neural network layer. They aptly called these ConvLSTM layers.
+            </p>
+            <p>
+            The initial plan for the project is to see if Prof. McKinnon’s results can be matched or improved upon with the application of ConvLSTM layers. If so, the research will then be extended to other parts of the world. Return to this webpage for updates on the progress of the research!
+            </p>
+            <h3>References</h3>
+            <ul style="list-style-type:disc;">
+              <li>Long-lead predictions of eastern United States hot days from Pacific sea surface temperatures. McKinnon, et al. 2016</li>
+              <li>Convolutional LSTM Network: A Machine Learning Approach for Precipitation Nowcasting. Shi et al. 2015</li>
+            </ul>
+					</section>
+				</div>
+			</div>
+
+		<!-- Footer -->
+			<div id="footer">
+				<div class="container">
+
+					<!-- Lists -->
+						<div class="row">
+							<div class="4u">
+								<section>
+									<header class="major">
+										<h2>Donec dictum metus</h2>
+										<span class="byline">Mattis wisi maecenas ligula</span>
+									</header>
+									<ul class="contact">
+										<li>
+											<span class="address">Address</span>
+											<span>1234 Somewhere Road #4285 <br />Nashville, TN 00000</span>
+										</li>
+										<li>
+											<span class="mail">Mail</span>
+											<span><a href="#">someone@untitled.tld</a></span>
+										</li>
+										<li>
+											<span class="phone">Phone</span>
+											<span>(000) 000-0000</span>
+										</li>
+									</ul>
+								</section>
+							</div>
+						</div>
+
+					<!-- Copyright -->
+						<div class="copyright">
+							Design: <a href="http://templated.co">TEMPLATED</a> Images: <a href="http://unsplash.com">Unsplash</a> (<a href="http://unsplash.com/cc0">CC0</a>)
+						</div>
+
+				</div>
+			</div>
+
+	</body>
+</html>
