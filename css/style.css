@@ -271,7 +271,7 @@
 				border-top: none;
 			}
 
-			ul.default > ul {
+			li > ul {
 				margin-left: 1em
 			}	
 
