@@ -132,6 +132,10 @@
 	i:hover {
 		opacity: 0.7;
 	}
+	
+	ul > li {
+   	 	margin-left: 10px;
+	}
 
 
 /* Form */
