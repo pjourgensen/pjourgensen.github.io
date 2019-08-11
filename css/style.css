@@ -132,15 +132,6 @@
 	i:hover {
 		opacity: 0.7;
 	}
-	
-	ul > li {
-   	 	margin-left: 10px;
-	}
-
-	ul ul {
-    		margin-left:1em;
-	}
-
 
 /* Form */
 
@@ -260,7 +251,7 @@
 		}
 
 	ul {
-		margin-left: 10px;
+		margin: 0;
 		padding: 0;
 	}
 
