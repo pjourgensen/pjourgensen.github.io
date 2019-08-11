@@ -90,29 +90,33 @@
 						<p></p>
 						<h3><i>Project Overview</i></h3>
 						<ul style="list-style-type:disc;">
-							<li>Data</li>
-							<ul style="list-style-type:circle;">
-								<li>Data consists of 72 patients with over 9000 gene expression levels</li>
-								<li>47 classified as patients with ALL, 25 with AML</li>
-								<li>Data already cleaned and suitable for use in ML models</li>
-							</ul>
-							<li>Baseline Model for Bootstrapping</li>
-							<ul style="list-style-type:circle;">
-								<li>Wanted a model that allowed for nonlinear combinations of gene expressions</li>
-								<li>Needed a model that remained weak and trained quickly</li>
-								<li>Chose to use a small densely connected neural network with high dropout rate to satisfy the preconditions</li>
-							</ul>
-							<li>Gene Scoring</li>
-							<ul style="list-style-type:circle;">
-								<li>Initial plan was to use individual model accuracies to score the individual genes</li>
-								<li>Majority of models only predicted majority class, however, so new methodology needed to be developed</li>
-								<li>Decided to only consider models that scored above that threshold to identify genes (or combinations) that may have predictive power</li>
-							</ul>
-							<li>KNN Optimization</li>
-							<ul style="list-style-type:circle;">
-								<li>Performed a grid search over the number of highest scoring genes to find the optimal number suited for classification</li>
-								<li>Identified 48 genes that when used in combination achieved an overall accuracy of 97.2% for classifying patients as having ALL or AML</li>
-							</ul>
+							<li>Data
+								<ul style="list-style-type:circle;">
+									<li>Data consists of 72 patients with over 9000 gene expression levels</li>
+									<li>47 classified as patients with ALL, 25 with AML</li>
+									<li>Data already cleaned and suitable for use in ML models</li>
+								</ul>
+							</li>
+							<li>Baseline Model for Bootstrapping
+								<ul style="list-style-type:circle;">
+									<li>Wanted a model that allowed for nonlinear combinations of gene expressions</li>
+									<li>Needed a model that remained weak and trained quickly</li>
+									<li>Chose to use a small densely connected neural network with high dropout rate to satisfy the preconditions</li>
+								</ul>
+							</li>
+							<li>Gene Scoring
+								<ul style="list-style-type:circle;">
+									<li>Initial plan was to use individual model accuracies to score the individual genes</li>
+									<li>Majority of models only predicted majority class, however, so new methodology needed to be developed</li>
+									<li>Decided to only consider models that scored above that threshold to identify genes (or combinations) that may have predictive power</li>
+								</ul>
+							</li>
+							<li>KNN Optimization
+								<ul style="list-style-type:circle;">
+									<li>Performed a grid search over the number of highest scoring genes to find the optimal number suited for classification</li>
+									<li>Identified 48 genes that when used in combination achieved an overall accuracy of 97.2% for classifying patients as having ALL or AML</li>
+								</ul>
+							</li>
 								
 						</ul>
 					</section>
