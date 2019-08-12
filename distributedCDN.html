@@ -65,12 +65,67 @@
 							<span class="byline">Assessing Distributed Content Delivery via Content and Consumer Clustering</span>
 						</header>
 						<a href="ContentCluster.pdf">PDF</a>
-            <a href="https://github.com/pjourgensen/ContentCluster">GitHub Repo</a>
-            <p></p>
-						<h3><i>Abstact</i></h3>
-						<p> 
-            With the explosion of media streaming services such as Netflix, a major issue in the quality of content delivery is bottlenecking at the content delivery nodes deployed across Content Delivery Networks ("CDN's"). Our aim is to assess the feasibility of constraining the storage requirements of individual content delivery nodes in the CDN by fixing the genres of the content each one supplies. If the genre groups are sufficiently unique and content is well-distributed across these groups, the storage required of individual nodes can be constrained in terms of its rate of growth. This can help financially justify the deployment of more nodes in the network, thereby reducing bottlenecking. Furthermore, if the genre distribution is such that consumer genre preferences can be mapped close to injectively on to it, applying such a mapping when serving consumer requests would help distribute the load across more servers, further reducing bottlenecking. The reduction of bottlenecking as described above would result in a better and more consistent end user experience for streaming services. Our results indicate that such groupings can lead to more favorable constraints for content delivery node resources.
-            </p>
+            					<a href="https://github.com/pjourgensen/ContentCluster">GitHub Repo</a>
+            					<p></p>
+						<h3><i><b>Project Status: [Completed]</b></i></h3>
+						<h3><i>Introduction</i></h3>
+						<p>The purpose of this project is to provide a framework that aims to reduce traffic to content distribution nodes and allows for further targeted content recommendations of Netflix users. Streaming services are pervasive in today's society and the amount of content being delivered via the internet is growing exponentially year over year. While CDNs were originally designed to reduce congestion on the root database, we're approaching a future where they themselves will be overwhelmed by traffic. In this project, we present a framework that addresses these concerns by leveraging a P2P-CDN hybrid architecture. With our focus on Netflix streaming, we begin by clustering content based on its genre listings and clustering consumers based on their genre preferences. We then map the consumer clusters to the content clusters to find optimal pairings for each group of consumers. The content within that cluster can then be shared via a P2P architecture and consumers can receive additional targeted recommendations based on the cluster they belong to.</p>
+						<h3><i>Methods Used</i></h3>
+						<ul style="list-style-type:disc;">
+							<li>Data Visualization</li>
+							<li>Relational Database Management</li>
+							<li>Machine Learning</li>
+							<li>Scaling/Normalization</li>
+							<li>Clustering</li>
+							<li>Algorithm Development</li>
+							<li>Object-Oriented Programming</li>
+						</ul>
+						<p></p>
+						<h3><i>Technologies</i></h3>
+						<ul style="list-style-type:disc;">
+							<li>Python, Jupyter</li>
+							<li>Pandas, Numpy</li>
+							<li>Scikit-Learn</li>
+							<li>K-means Clustering</li>
+							<li>Matplotlib</li>
+						</ul>
+						<p></p>
+						<h3><i>Project Overview</i></h3>
+						<ul style="list-style-type:disc;">
+							<li>Data
+								<ul style="list-style-type:circle;">
+									<li>Netflix Prize Data: 100 million+ user ratings (450,000+ users with 17,000+ titles)</li>
+									<li>themoviedb Data: Detailed information of 350,000+ movies</li>
+									<li>Joined the 2 datasets on movie title and release date to relate user ratings with particular characteristics of movies</li>
+								</ul>
+							</li>
+							<li>Clustering Considerations
+								<ul style="list-style-type:circle;">
+									<li>Wanted a model that allowed for configurable cost functions and cluster sizes</li>
+									<li>Wanted low asymptotic time complexity during training</li>
+									<li>Chose to develop a custom k-means clustering algorithm that allowed for such configurations</li>
+								</ul>
+							</li>
+							<li>Content Clustering by Genre
+								<ul style="list-style-type:circle;">
+									<li>Created bit vectors for each movie that corresponded to their genre listings</li>
+									<li>Penalized extreme cluster sizes as too small provides only marginal benefits, but too large realistically runs into memory constraints</li>
+								</ul>
+							</li>
+							<li>Consumer Clustering by Genre Preferences
+								<ul style="list-style-type:circle;">
+									<li>Developed an algorithm to normalize user ratings and score each genre for each user based on their interests</li>
+									<li>Penalize small clusters as they wouldn't realistically meet memory requirements</li>
+								</ul>
+							</li>
+							<li>Mapping Consumer Clusters to Content Clusters
+								<ul style="list-style-type:circle;">
+									<li>Find the pairings such that the average genre preferences of a consumer cluster most closely resemble the average genre makeup of a content cluster</li>
+									<li>Absolute difference used for distance measurement</li>
+								</ul>
+							</li>
+								
+						</ul>
 					</section>
 				</div>
 			</div>
