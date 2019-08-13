@@ -65,15 +65,69 @@
 							<span class="byline">Assessing Cancer Risk via Gradient-Boosted Decision Trees</span>
 						</header>
 						<a href="NHANESanalysis.pdf">PDF</a>
-            <a href="https://github.com/pjourgensen/Opportunistic">GitHub Repo</a>
-            <p></p>
-						<h3><i>Abstact</i></h3>
-						<p> 
-            Cancer prevention and risk prediction are among the foremost problems facing medical researchers today. While traditional correlational studies continue to persist, the future of cancer prevention, diagnosis, and treatment will heavily depend on machine learning methods applied to patient databases detailing symptoms, demographic information, family history, diet, lab results, and comorbidities (among other considerations). The National Health and Nutritional Examination Survey (NHANES) attempts to gather such data and add to its publicly accessible database each year. In this paper, I detail an approach to leveraging the NHANES data set to predict whether or not a patient will develop cancer at some point in their life. Features are initially selected based on common risk factors of non-communicable diseases and those indicated by current medical journals. They are then filtered and used to train a Gradient-Boosted Decision Tree model before final prediction. Further exploration and optimization exists in the feature selection and pre-processing steps, so this remains a living project.
-            </p>
+            					<a href="https://github.com/pjourgensen/Opportunistic">GitHub Repo</a>
+            					<p></p>
+						<h3><i><b>Project Status: [On Hold]</b></i></h3>
+						<h3><i>Introduction</i></h3>
+						<p>The purpose of this project is to develop a cancer classification and risk prediction model in the hopes of providing advance warning to patients at risk for cancer. Every year, the National Health and Nurtitional Examination Survey (NHANES) gathers patient data detailing symptoms, demographic information, family history, diet, lab results, and comorbidities (among other considerations). This data is made available to allow the general public to analyze and develop models based on the responses. The main difficulty lies within the quality of the data as many of the responses are missing. In this project, I present an analysis of feature selection and engineering before developing an object-oriented pipeline that allows for seamless trials of parameterizations. Ultimately, a gradient-boosted decision tree model performed optimally, achieving a 24.2% recall on a heldout test set. I believe there is still room for improvement in the feature selection and preprocessing steps, so this project remains [On Hold] until the opportunity to continue arises.</p>
+						<h3><i>Methods Used</i></h3>
+						<ul style="list-style-type:disc;">
+							<li>Object-Oriented Programming</li>
+							<li>Pipelining</li>
+							<li>Inferential Statistics</li>
+							<li>Missing Value Imputation, Categorical Encoding</li>
+							<li>Feature Selection, Filtering</li>
+							<li>Decision Trees, SVMs</li>
+							<li>Ensembling Methods, Boosting</li>
+							<li>Data Visualization</li>
+							<li>Predictive Modeling</li>
+							<li>Model Persistance</li>
+						</ul>
+						<p></p>
+						<h3><i>Technologies</i></h3>
+						<ul style="list-style-type:disc;">
+							<li>Python, Jupyter</li>
+							<li>Pandas, Numpy</li>
+							<li>Scikit-Learn</li>
+							<li>Tensorflow</li>
+							<li>Seaborn, Matplotlib</li>
+							<li>joblib</li>
+						</ul>
+						<p></p>
+						<h3><i>Project Overview</i></h3>
+						<ul style="list-style-type:disc;">
+							<li>Data
+								<ul style="list-style-type:circle;">
+									<li>50,000 patients with over 500 possible survey responses</li>
+									<li>Roughly 9% are positive for having cancer at some point in their lives</li>
+									<li>Requires substantial hand-selection and preprocessing</li>
+								</ul>
+							</li>
+							<li>Feature Selection
+								<ul style="list-style-type:circle;">
+									<li>Began with a correlational filter to remove highly correlated features</li>
+									<li>Passed data through mutual information filter to identify subset with some relationship to the target class</li>
+									<li>Finally passed data through variance filter to remove features with minimal variance</li>
+									<li>Lasso regression and tree-based methods were also tested, but resulted in declines in model performance</li>
+								</ul>
+							</li>
+							<li>Performance Metric
+								<ul style="list-style-type:circle;">
+									<li>Chose 5-fold cross-validation on balanced training set to assess overall accuracy</li>
+								</ul>
+							</li>
+							<li>Predictive Modeling
+								<ul style="list-style-type:circle;">
+									<li>Ran parameter tuning grid searches over Decision Trees, SVMs, Random Forests, GBDTs, and Neural Networks</li>
+									<li>Found that an optimized GBDT delivered an accuracy of 76.5% and recall of 24.2%</li>
+								</ul>
+							</li>
+								
+						</ul>
 					</section>
 				</div>
 			</div>
+
 
 		<!-- Footer -->
 		<div id="footer">
