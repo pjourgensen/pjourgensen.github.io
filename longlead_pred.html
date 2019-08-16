@@ -65,19 +65,20 @@
 							<h2>Heatwave Prediction</h2>
 							<span class="byline">Longlead heatwave prediction of Eastern US via Convolutional LSTM Networks</span>
 						</header>
-            <a href="https://github.com/pjourgensen/Longlead-Heat">GitHub Repo</a>
-            <p></p>
+            					<a href="https://github.com/pjourgensen/Longlead-Heat">GitHub Repo</a>
+            					<p></p>
 						<h3><i>Overview</i></h3>
-						<p> 
-            Sea Surface Temperature (SST) is a valuable factor in climate modeling and weather forecasting. In 2016, <a href=https://karenamckinnon.github.io/index.html">Prof. Karen McKinnon</a> published a paper on an approach she used to predict hot days of the Eastern US with lead times up to 50 days in advance. Upon reading the paper, I reached out to Prof. McKinnon to discuss the possibility of extending the research with the application of neural networks in an attempt to not only improve accuracy, but allow for generalized prediction across the world as well. 
-            </p>
-            <figure>
+						<p>The purpose of this project is to develop a forecasting model for heatwave events for the intended use of informing agricultural planning and community preparation. The data that will be used for developing this model is Sea Surface Temperature (SST) data that has been collated by the NOAA. SST data is a valuable factor in climate modeling and weather forecasting and has had demonstrated success in similar models. In this project, I plan to apply deep learning to predict heatwave events in the Eastern US based on SST data focused on the Pacific ocean.</p>
+            					<figure>
 							<img src="/images/sst_example.jpg" alt="SST Example" width="600" height="300" class="center">
 							<figcaption><b>Fig.1 - Illustration of SST data. Daily measurements go back to late 1981.</b></figcaption>
 						</figure>
-            <p>
-            In this project, I attempt to apply neural networks to SST data for longlead predictions of heatwave events in the Eastern US. SST data is spatial in structure (Latitude x Longitude), which lends itself to convolutional analysis, while the dependencies of sequential days are temporal in structure, lending itself to time series analysis. The most common tools for these structures are Convolutional Neural Networks (CNNs) for spatial reasoning and Long Short Term Memory (LSTM) Models for temporal reasoning. In 2015, Xingjian Shi et al. developed a model combining the 2 methods, that was then shown to have improved performance in spatiotemporal modeling.
-            </p>
+            					<p>To develop the model, you must first understand the data. SST data is spatiotemporal in structure. But what does this really mean?</p>
+						<p>First, it means there is a spatial component to the data. In other words, the relative position of the data points plays a key role, much like pixels in, say, the picture of a dog. When the pixels are arranged properly, we can easily identify the dog in the picture. But when the location is randomized, it becomes a jumbled mess! For our purposes, the relative latitudes and longitudes of the SST data are imperative to proper modeling.</p>
+						<figure>
+							<img src="/images/dog_rand.jpg" alt="dog" width="600" height="300" class="center">
+							<figcaption><b>Fig.1 - Illustration of spatial effect of data.</b></figcaption>
+						</figure>
             <figure>
 							<img src="/images/cnn.jpg" alt="CNN Model" width="450" height="300">
               <img src="/images/lstm.jpg" alt="LSTM Model" width="300" height="300" float="right">
