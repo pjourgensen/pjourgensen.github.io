@@ -68,7 +68,7 @@
             					<a href="https://github.com/pjourgensen/Longlead-Heat">GitHub Repo</a>
             					<p></p>
 						<h3><i>Overview</i></h3>
-						<p>The purpose of this project is to develop a forecasting model for heatwave events for the intended use of informing agricultural planning and community preparation. The data that will be used for developing this model is Sea Surface Temperature (SST) data that has been collated by the NOAA. SST data is a valuable factor in climate modeling and weather forecasting and has had demonstrated success in similar models. In this project, I plan to apply deep learning to predict heatwave events in the Eastern US based on SST data focused on the Pacific ocean.</p>
+						<p>The purpose of this project is to develop a forecasting model for heatwave events for the intended use of informing agricultural planning and community preparation. The data that will be used for developing this model is Sea Surface Temperature (SST) data that has been collated by the NOAA. SST data is a valuable factor in climate modeling and weather forecasting and has had demonstrated success in similar models. In this project, I plan to apply neural networks to this data in an effort to predict heatwave events in the Eastern US.</p>
             					<figure>
 							<img src="/images/sst_example.jpg" alt="SST Example" width="600" height="300" class="center">
 							<figcaption><b>Fig.1 - Illustration of SST data. Daily measurements go back to late 1981.</b></figcaption>
@@ -81,7 +81,7 @@
 							<figcaption><b>Fig.2 - Illustration of spatial effect of data.</b></figcaption>
 						</figure>
 						<p></p>
-						<p>Second, it means there is a temporal component to the data. This means that the order in which the data is processed plays a key role. The sentence <i>"the dog likes music"</i> conceptually makes sense, while the sentence <i>"likes music dog the"</i> suddenly loses all its meaning. Like the order of the sentence, the SST data must be processed in order of its time.</p>
+						<p>Second, it means there is a temporal component to the data. This means that the order in which the data is processed plays a key role. The sentence <i>"the dog likes music"</i> syntactically makes sense, while the sentence <i>"likes music dog the"</i> suddenly loses all its meaning. Like the order of the sentence, the SST data must be processed in order of its time.</p>
 						<p>So how do neural networks process this type of data?</p>
 						<p>Well, Convolutional Neural Networks (CNNs) have had a lot of success is processing spatial data, while Long Short Term Memory Models (LSTMs) have had a lot of success processing temporal data, but we need something that combines the two. In 2015, Shi et al. did just this, combining the two models into a neural network architecture they aptly called the "ConvLSTM" unit. In this project, I will be adapting this unit to suit the needs of my own predictive model.</p>
 						<figure>
