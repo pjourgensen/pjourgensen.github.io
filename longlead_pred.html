@@ -68,13 +68,14 @@
             					<a href="https://github.com/pjourgensen/Longlead-Heat">GitHub Repo</a>
             					<p></p>
 						<h3><i>Overview</i></h3>
-						<p>The purpose of this project is to develop a forecasting model for heatwave events for the intended use of informing agricultural planning and community preparation. The data that will be used for developing this model is Sea Surface Temperature (SST) data that has been collated by the NOAA. SST data is a valuable factor in climate modeling and weather forecasting and has had demonstrated success in similar models. In this project, I plan to apply neural networks to this data in an effort to predict heatwave events in the Eastern US.</p>
+						<p>The purpose of this project is to develop a forecasting model for heatwave events for the intended use of informing agricultural planning and community preparation. The data that will be used for developing this model is Sea Surface Temperature (SST) data that has been collated by the NOAA. SST data is a valuable factor in climate modeling and weather forecasting and has had demonstrated success in similar models<sup>[1]</sup>. In this project, I plan to apply neural networks to this data in an effort to predict heatwave events in the Eastern US.</p>
             					<figure>
 							<img src="/images/sst_example.jpg" alt="SST Example" width="600" height="300" class="center">
 							<figcaption><b>Fig.1 - Illustration of SST data. Daily measurements go back to late 1981.</b></figcaption>
 						</figure>
 						<p></p>
             					<p>To develop the model, you must first understand the data. SST data is spatiotemporal in structure. But what does this really mean?</p>
+						<h3><i>Spatiotemporal Data</i></h3>
 						<p>First, it means there is a spatial component to the data. In other words, the relative position of the data points plays a key role, much like pixels in, say, the picture of a dog. When the pixels are arranged properly, we can easily identify the dog in the picture. But when the location is randomized, it becomes a jumbled mess! For our purposes, the relative latitudes and longitudes of the SST data are imperative to proper modeling.</p>
 						<figure>
 							<img src="/images/dog_rand.jpg" alt="dog" width="648" height="288" class="center">
@@ -83,6 +84,12 @@
 						<p></p>
 						<p>Second, it means there is a temporal component to the data. This means that the order in which the data is processed plays a key role. The sentence <i>"the dog likes music"</i> syntactically makes sense, while the sentence <i>"likes music dog the"</i> suddenly loses all its meaning. Like the order of the sentence, the SST data must be processed in order of its time.</p>
 						<p>So how do neural networks process this type of data?</p>
+						<h3><i>Modeling</i></h3>
+						<p>Let's again start by focusing on spatial data. Convolutional Neural Netowrks (CNNs) have become the industry standard for handling such data. They were developed to be similar to the way that humans process images or, more technically, spatial data. Biologically, neurons respond to stimuli in only a small piece of the overall visual field at a time. A collection of such responses then overlap to form our entire visual field<sup>[2]</sup>. CNNs work much the same way. A filter is passed over small chunks of the image identifying if certain features, like an edge or a corner, are present. The following animation illustrates the concept of these filters. Higher level filters may later be passed over these results to "stitch" together the collection of edges and corners to perhaps recognize an eye or nose of a face. If 2 eyes, a nose, and a mouth are discovered, the CNN may then be capable of recognizing a face in the image. For the purpose of this project, the goal is for the CNN to identify SST patterns that correspond with higher air temperatures in the US.</p>
+						<figure>
+							<img src="/images/cnn.gif" alt="CNN Model" width="360" height="265" class="center">
+							<figcaption><b>Fig.3 - A CNN filter in action.</b></figcaption>
+						</figure>
 						<p>Well, Convolutional Neural Networks (CNNs) have had a lot of success is processing spatial data, while Long Short Term Memory Models (LSTMs) have had a lot of success processing temporal data, but we need something that combines the two. In 2015, Shi et al. did just this, combining the two models into a neural network architecture they aptly called the "ConvLSTM" unit. In this project, I will be adapting this unit to suit the needs of my own predictive model.</p>
 						<figure>
 							<img src="/images/cnn_lstm.jpg" alt="CNN/LSTM Model" width="1149" height="288" class="center">
@@ -93,10 +100,11 @@
        
 					 
 					    	<h3>References</h3>
-					    	<ul style="list-style-type:disc;">
+					    	<ol>
 					      		<li>Long-lead predictions of eastern United States hot days from Pacific sea surface temperatures. McKinnon, et al. 2016</li>
+							<li><a href="https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53">A Comprehensive Guide to Convolutional Neural Networks. Sumit Saha</a></li>
 					      		<li>Convolutional LSTM Network: A Machine Learning Approach for Precipitation Nowcasting. Shi et al. 2015</li>
-					    	</ul>
+					    	</ol>
 					</section>
 				</div>
 			</div>
