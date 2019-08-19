@@ -90,6 +90,14 @@
 							<img src="/images/cnn.gif" alt="CNN Model" width="360" height="265" class="center">
 							<figcaption><b>Fig.3 - A CNN filter in action.</b></figcaption>
 						</figure>
+						<p></p>
+						<p>Now for processing temporal data, Long Short Term Memory (LSTM) models have become the standard. They are a particular architecture that belongs to the Recurrent Neural Network family, which consists of models whose outputs are then fed into the input of the next "step". I put "step" in quotes here to emphasize that it may refer to the next timestep, but it also may refer to the next word in a sentence, or the next number in a sequence. If the order of the data is imperative to the problem, LSTMs tend to be a good choice.</p>
+						<p>This model, too, took inspiration from human and biological processes. The core concept is that the model maintains a "memory" from the previous timesteps that is adjusted and updated each pass according to a collection of gates<sup>[3]</sup>. These gates are Densely Connected Neural Networks (this is important!). With each pass, pieces of "memory" may be forgotten and new pieces may be added before moving on to the next step. If I'm deciding what shirt I want to wear today, I may want to consider all of the shirts I've worn in the past week, but I may not want to consider what I wore 3 months ago. For an illustration of how data flows through this model, check out the following animation!</p>
+						<figure>
+							<img src="/images/lstm.gif" alt="LSTM Model" width="360" height="265" class="center">
+							<figcaption><b>Fig.4 - An LSTM in action. Here the "cell state" refers to the memory of the model.</b></figcaption>
+						</figure>
+						<p></p>
 						<p>Well, Convolutional Neural Networks (CNNs) have had a lot of success is processing spatial data, while Long Short Term Memory Models (LSTMs) have had a lot of success processing temporal data, but we need something that combines the two. In 2015, Shi et al. did just this, combining the two models into a neural network architecture they aptly called the "ConvLSTM" unit. In this project, I will be adapting this unit to suit the needs of my own predictive model.</p>
 						<figure>
 							<img src="/images/cnn_lstm.jpg" alt="CNN/LSTM Model" width="1149" height="288" class="center">
@@ -103,7 +111,8 @@
 					    	<ol>
 					      		<li>Long-lead predictions of eastern United States hot days from Pacific sea surface temperatures. McKinnon, et al. 2016</li>
 							<li><a href="https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53">A Comprehensive Guide to Convolutional Neural Networks. Sumit Saha</a></li>
-					      		<li>Convolutional LSTM Network: A Machine Learning Approach for Precipitation Nowcasting. Shi et al. 2015</li>
+					      		<li><a href="https://towardsdatascience.com/illustrated-guide-to-lstms-and-gru-s-a-step-by-step-explanation-44e9eb85bf21">Illustrated Guide to LSTMs. Michael Nguyen</a></li>
+							<li>Convolutional LSTM Network: A Machine Learning Approach for Precipitation Nowcasting. Shi et al. 2015</li>
 					    	</ol>
 					</section>
 				</div>
