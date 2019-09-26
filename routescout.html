@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<!--
+	Horizons by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Route Scout</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.dropotron.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+	</head>
+	<body class="no-sidebar">
+
+		<!-- Header -->
+			<div id="header">
+				<div class="container">
+
+					<!-- Logo -->
+						<h1><a href="#" id="logo"></a></h1>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="index.html">Home</a></li>
+								<li><a href="about.html">About</a></li>
+                						<li>
+									<a href="">Active Projects</a>
+									<ul>
+										<li><a href="longlead_pred.html">Heatwave Prediction</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="">Past Projects</a>
+									<ul>
+										<li><a href="nhanes.html">NHANES Analysis</a></li>
+										<li><a href="distributedCDN.html">Distributed CDN</a></li>
+										<li><a href="genes.html">Gene Selection</a></li>
+									</ul>
+								</li>
+								<li><a href="Resume.pdf" target="_blank">Resume</a></li>
+							</ul>
+						</nav>
+
+				</div>
+			</div>
+
+		<!-- Main -->
+			<div id="main" class="wrapper style1">
+				<div class="container">
+					<section>
+						<header class="major">
+							<h2>Route Scout</h2>
+							<span class="byline">A tool for helping climbers find their perfect route.</span>
+						</header>
+                      <a href="http://route-scout.herokuapp.com/">Route Scout</a>
+            					<a href="https://github.com/pjourgensen/route-scout">GitHub Repo</a>
+            					<p></p>
+						<h3><i>Overview</i></h3>
+						<p>As an avid climber, this project was born from passion. Whenever I'd make outdoors trips, I'd want to maximize my time by pre-identifying a few bouldering routes I'd like to commit to for the day. This often came with scouring guide books and Mountain Project, an online listing of thousands of climbing routes across the globe, to find routes that interested me and were nearby one another. I wanted there to be an easy to use and centralized source that I could use to search for recommendations. So began the creation of Route Scout.</p>
+            					<figure>
+							<img src="/images/jtree_boulder.jpg" alt="Joshua Tree" width="600" height="400" class="center">
+							<figcaption><b>Fig.1 - Joshua Tree National Park. One of the pillars for the sport of climbing.</b></figcaption>
+						</figure>
+						<p></p>
+            					<p>With minimal prior experience in database and application development, I wanted to initially keep the app small and specialized. As such, I only focused on bouldering routes in Southern California. That said, I chose to develop and leverage a database to allow the app to easily scale with a growing number of routes and locations. I used Postgres and Python's sql plugin, psycopg2, to facilitate the the database construction. The data was all pulled from Mountain Project via their API and some additional web scraping. I then used Dash, a tool for developing web based applications in python or R, to develop and interactive dashboard to serve the recommendations.</p>
+                      <figure>
+							<img src="/images/route_scout.jpg" alt="Screenshot" width="1200" height="1600" class="center">
+							<figcaption><b>Fig.2 - Screenshot of Route Scout.</b></figcaption>
+						</figure>
+						<h3><i>Backend Model</i></h3>
+						<p>The recommendation system is based off of a user input description of the type of climb they are looking for. This is a natural language processing problem. One of the difficulties is the extensive use of jargon (without standardized spellings!) in climbing route descriptions. While stemming and lemmatization are still applicable, some cleaning must be applied beforehand. For now, I've simply used a brute force approach to identify key climbing terms that may be spelled differently and replace them with a standardized version of the word. Then, after removing stop words and punctuation, I vectorize the descriptions with a Term Frequency-Inverse Document Frequency vectorizer and measure the cosine similarity of all routes and the input description. Very simply, if the user inputs a keyword that doesn't appear very often, this makes it likely they will find the climbs where that keyword is present, hopefully satisfying their search! While this backend model is serviceable, it remains a priority of mine to continue to improve upon.</p>
+						<p>Try out the app for yourself with the link at the top of the page and feel free to refer back to this post for future updates!</p>
+					</section>
+				</div>
+			</div>
+
+		<!-- Footer -->
+		<div id="footer">
+				<div class="container">
+
+					<center><ul class="icons">
+						<li>pjourgensen@gmail.com </li>
+						<li><a href="https://www.linkedin.com/in/peter-jourgensen-2a2b0349/" target="_blank"><i class="fa fa-linkedin-square"></i></a></li>
+						<li><a href="https://github.com/pjourgensen" target="_blank"><i class="fa fa-github"></i></a></li>
+					</ul></center>
+				</div>
+		</div>
+
+	</body>
+</html>
